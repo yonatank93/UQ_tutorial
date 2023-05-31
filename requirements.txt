@@ -1,0 +1,7 @@
+numpy
+scipy
+numdifftools
+emcee
+tqdm
+matplotlib
+corner
