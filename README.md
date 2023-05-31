@@ -1,4 +1,6 @@
-# MCMC_tutorial
+# UQ tutorial
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/yonatank93/UQ_tutorial/main)
+
 Tutorial to do MCMC sampling in Python.
 
 The focus of this tutorial is to understand how the error in the training data is
