@@ -3,12 +3,13 @@
 
 Tutorial to do MCMC sampling in Python.
 
-The focus of this tutorial is to understand how the error in the training data is
-propagated to the parameters when we do regression. We will start the tutorial by
-utilizing a Monte Carlo method to see how the uncertainty of the training data propagates
-to the parameters. Then, we will look at a local approximation of parameter uncertainty
-via the Fisher information matrix (FIM). Finally, we will touch on how to do MCMC
-simulation using Python `emcee` package.
+>Any measurement that you make without the knowledge of its uncertainty is completely
+>meaningless (W. Lewin)
+
+>No forecast is complete without an estimate of its uncertainty (Tennekes et al. 1986)
+
+The focus of this tutorial is to introduce uncertainty propagation from the data to the
+inferred parameters. The tutorials are presented using the Jupyter notebooks.
 
 ## Get started
 Several ways to run the Jupyter notebook in this repository:
@@ -32,6 +33,10 @@ Several ways to run the Jupyter notebook in this repository:
      python3 -m pip install -r requirements.txt
      ```
    Then, you can just run Jupyter locally on your machine.
+   
+## Notebook content
+* [0_introduction.ipynb](https://github.com/yonatank93/UQ_tutorial/blob/main/0_introduction.ipynb)  
+  Start with this notebook to get a basic idea on statistical modeling and uncertainty propagation.
 
 ## Contact
 Yonatan Kurniawan (kurniawanyo@outlook.com)
