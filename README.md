@@ -37,6 +37,9 @@ Several ways to run the Jupyter notebook in this repository:
 ## Notebook content
 * [0_introduction.ipynb](https://github.com/yonatank93/UQ_tutorial/blob/main/0_introduction.ipynb)  
   Start with this notebook to get a basic idea on statistical modeling and uncertainty propagation.
+* [1_fisher_information.ipynb](https://github.com/yonatank93/UQ_tutorial/blob/main/0_fisher_information.ipynb)  
+  This notebook continues discussion about UQ an introduces the Fisher information analysis as a
+  local UQ method.
 
 ## Contact
 Yonatan Kurniawan (kurniawanyo@outlook.com)
