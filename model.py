@@ -39,7 +39,7 @@ class BaseModel:
         self.M = M
 
         self.data = data
-        self.data_error = data_error
+        self.data_error = 1.0 if data_error is None else data_error
 
         # Parameter transform
         if transform is None:
@@ -66,8 +66,7 @@ class BaseModel:
 
         """
         check_data(self.data, self.data_error)
-        x = self.transform(params)
-        preds = self.predict(x)
+        preds = self.predict(params)
         return (self.data - preds) / self.data_error
 
     def cost(self, params: np.ndarray) -> float:
@@ -85,8 +84,7 @@ class BaseModel:
 
         """
         check_data(self.data, self.data_error)
-        x = self.transform(params)
-        res = self.residual(x)
+        res = self.residual(params)
         return 0.5 * np.linalg.norm(res) ** 2
 
 
@@ -150,6 +148,62 @@ class LinearModel(BaseModel):
         return self.J @ x
 
 
+class FractionalModel(BaseModel):
+    """A model class for fractional models.
+
+    The model has the form
+
+    .. math::
+
+       f(\theta; t) = \frac{1}{\sum_{n=0}^{N-1} \theta_n t^n + t^n}
+
+    Parameters
+    ----------
+    N: int
+        Nummber of parameters in the model.
+    t: np.ndarray (M,)
+        List of values for the independent variables.
+    data: np.ndarray (M,) (optional)
+        Data values for each independent variable. The data is needed when evaluating
+        the residual and cost.
+    data_error: np.ndarray (M,) (optional)
+        Error bar for each data value. This is required when evaluating the residual and
+        cost.
+    transform: callable ``f(x)`` (optional)
+        A function to transform the parameters from whatever space the parameters are
+        input to the parameter spaces used by the model.
+    """
+
+    def __init__(
+        self,
+        N: int,
+        t: np.ndarray,
+        data: np.ndarray = None,
+        data_error: np.ndarray = None,
+        transform=None,
+    ):
+        self.t = t
+        super().__init__(N, len(t), data, data_error, transform)
+
+    def predict(self, params):
+        """Evaluate the model at the given parameters.
+
+        Parameters
+        ----------
+        params : np.ndarray (N,)
+            Parameter values to evaluate.
+
+        Returns
+        -------
+        np.ndarray
+            Predictions of the model.
+
+        """
+        x = self.transform(params)
+        denom_elems = np.array([xi * self.t**ii for ii, xi in enumerate(x)])
+        return 1 / (np.sum(denom_elems, axis=0) + self.t**self.N)
+
+
 class ExponentialModel(BaseModel):
     """A model class for a model of the sum of decaying expponentials.
 
@@ -189,6 +243,19 @@ class ExponentialModel(BaseModel):
         super().__init__(N, len(t), data, data_error, transform)
 
     def predict(self, params):
+        """Evaluate the model at the given parameters.
+
+        Parameters
+        ----------
+        params : np.ndarray (N,)
+            Parameter values to evaluate.
+
+        Returns
+        -------
+        np.ndarray
+            Predictions of the model.
+
+        """
         x = self.transform(params)
         terms = np.array([np.exp(-par * self.t) for par in x])
         return np.sum(terms, axis=0) / self.N
@@ -196,8 +263,8 @@ class ExponentialModel(BaseModel):
 
 def check_data(data, error):
     """Check if the data and the corresponding error bars are set."""
-    if data is None or error is None:
-        raise ModelError("Please set both the data and the error bars of the data")
+    if data is None:
+        raise ModelError("Please set the values and error bars of the data")
 
 
 class ModelError(Exception):
