@@ -40,6 +40,8 @@ Several ways to run the Jupyter notebook in this repository:
 * [1_fisher_information.ipynb](https://github.com/yonatank93/UQ_tutorial/blob/main/0_fisher_information.ipynb)  
   This notebook continues discussion about UQ an introduces the Fisher information analysis as a
   local UQ method.
+* [1_mcmc.ipynb](https://github.com/yonatank93/UQ_tutorial/blob/main/0_mcmc.ipynb)  
+  This notebook contains an introduction to Markov Chain Monte Carlo (MCMC) sampling.
 
 ## Contact
 Yonatan Kurniawan (kurniawanyo@outlook.com)
