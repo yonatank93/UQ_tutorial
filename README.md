@@ -37,10 +37,10 @@ Several ways to run the Jupyter Notebook in this repository:
 ## Notebook content
 * [0_introduction.ipynb](https://github.com/yonatank93/UQ_tutorial/blob/main/0_introduction.ipynb)  
   Start with this notebook to get a basic idea of statistical modeling and uncertainty propagation.
-* [1_fisher_information.ipynb](https://github.com/yonatank93/UQ_tutorial/blob/main/0_fisher_information.ipynb)  
+* [1_fisher_information.ipynb](https://github.com/yonatank93/UQ_tutorial/blob/main/1_fisher_information.ipynb)  
   This notebook continues the discussion about UQ and introduces the Fisher information analysis as a
   local UQ method.
-* [1_mcmc.ipynb](https://github.com/yonatank93/UQ_tutorial/blob/main/0_mcmc.ipynb)  
+* [2_mcmc.ipynb](https://github.com/yonatank93/UQ_tutorial/blob/main/2_mcmc.ipynb)  
   This notebook contains an introduction to Markov Chain Monte Carlo (MCMC) sampling.
 
 ## Contributing guide
