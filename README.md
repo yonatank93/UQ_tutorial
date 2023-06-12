@@ -9,15 +9,15 @@ Tutorial to do MCMC sampling in Python.
 >No forecast is complete without an estimate of its uncertainty (Tennekes et al. 1986)
 
 The focus of this tutorial is to introduce uncertainty propagation from the data to the
-inferred parameters. The tutorials are presented using the Jupyter notebooks.
+inferred parameters. The tutorials are presented using the Jupyter Notebooks.
 
 ## Get started
-Several ways to run the Jupyter notebook in this repository:
+Several ways to run the Jupyter Notebook in this repository:
 1. Use [Binder](https://mybinder.org/). You can go to the link and add this repository.
    Or, you can just click on the Binder banner above. Be aware that to start a session in
-   Binder can take quite a long time, and it can depends on how many resources are available.
+   Binder can take quite a long time, and it can depend on how many resources are available.
    However, this would be my preferred way, if you don't want to install more Python packages
-   in your own machine.
+   on your own machine.
 2. Use Github Codespaces. On the repository page, you can access codespaces under the Code
    tab. There will be 2 subtabs there: Local and Codespaces, which is the one that you want.
    Then, click on the (+) sign to create your codespace. This will open a web version of VS
@@ -33,15 +33,19 @@ Several ways to run the Jupyter notebook in this repository:
      python3 -m pip install -r requirements.txt
      ```
    Then, you can just run Jupyter locally on your machine.
-   
+
 ## Notebook content
 * [0_introduction.ipynb](https://github.com/yonatank93/UQ_tutorial/blob/main/0_introduction.ipynb)  
-  Start with this notebook to get a basic idea on statistical modeling and uncertainty propagation.
+  Start with this notebook to get a basic idea of statistical modeling and uncertainty propagation.
 * [1_fisher_information.ipynb](https://github.com/yonatank93/UQ_tutorial/blob/main/0_fisher_information.ipynb)  
-  This notebook continues discussion about UQ an introduces the Fisher information analysis as a
+  This notebook continues the discussion about UQ and introduces the Fisher information analysis as a
   local UQ method.
 * [1_mcmc.ipynb](https://github.com/yonatank93/UQ_tutorial/blob/main/0_mcmc.ipynb)  
   This notebook contains an introduction to Markov Chain Monte Carlo (MCMC) sampling.
+
+## Contributing guide
+To contribute to this repo, fork this repo and create a new branch. Do the updating to
+this new branch. Then, open a pull request to merge your changes to this repo.
 
 ## Contact
 Yonatan Kurniawan (kurniawanyo@outlook.com)
