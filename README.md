@@ -1,7 +1,7 @@
 # UQ tutorial
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/yonatank93/UQ_tutorial/main)
 
-Tutorial to do MCMC sampling in Python.
+Tutorial to do uncertainty quantification in Python.
 
 >Any measurement that you make without the knowledge of its uncertainty is completely
 >meaningless (W. Lewin)
@@ -33,6 +33,27 @@ Several ways to run the Jupyter Notebook in this repository:
      python3 -m pip install -r requirements.txt
      ```
    Then, you can just run Jupyter locally on your machine.
+   
+### Using virtual environment
+First, create the virtual environment, for example by executing,
+``` bash
+virtualenv myenv
+source myenv/bin/activate  # Activate the virtual environment
+```
+Then, install all dependencies and add the virtual environment to jupyter notebook:
+``` bash
+python -m pip install -r requirements.txt
+python -m ipykernel install --user --name=myenv
+```
+Now, the envionment is ready to use for running the notebooks in this tutorial!
+
+If you want to remove the virtual environment:
+``` bash
+deactivate  # Deactivate virtual environment
+jupyter kernelspec uninstall myenv  # Remove virtual environment kernel from jupyter
+rm -rvf myenv  # Remove the virtual environment
+```
+
 
 ## Notebook content
 * [0_introduction.ipynb](https://github.com/yonatank93/UQ_tutorial/blob/main/0_introduction.ipynb)  
