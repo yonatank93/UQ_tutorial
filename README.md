@@ -8,6 +8,8 @@ Tutorial to do uncertainty quantification in Python.
 
 >No forecast is complete without an estimate of its uncertainty (Tennekes et al. 1986)
 
+>Unknown uncertainty is worse than a large uncertainty (V. Bulatov 2019)
+
 The focus of this tutorial is to introduce uncertainty propagation from the data to the
 inferred parameters. The tutorials are presented using the Jupyter Notebooks.
 
